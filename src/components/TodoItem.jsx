@@ -1,6 +1,6 @@
-function TodoItem(){
+function TodoItem({todo}){
     return (
-        <div>TodoItem</div>
+        <div>{todo.text}</div>
     );
 }
 
