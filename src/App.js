@@ -15,11 +15,18 @@ function App() {
   ]);
   const [filter, setFilter] = useState("all");
 
+  // Переключение статуса
+  const toggleTodo = (id) => {
+    setTodos(todos.map(todo => 
+      todo.id === id ? {...todo, completed: !todo.completed} : todo
+    ));
+  };
+
   return (
     <div>
       <h1>Мой Todo App</h1>
       <TodoForm />
-      <TodoList todos={todos}/>
+      <TodoList todos={todos} onToggle={toggleTodo}/>
       <TodoFilter />
       <TodoFooter />
     </div>

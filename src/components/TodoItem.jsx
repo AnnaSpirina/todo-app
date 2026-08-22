@@ -1,6 +1,9 @@
-function TodoItem({todo}){
+function TodoItem({todo, onToggle}){
     return (
-        <div>{todo.text}</div>
+        <div>
+            <input type="checkbox" checked={todo.completed} onChange={() => onToggle(todo.id)} />
+            {todo.text}
+        </div>
     );
 }
 
