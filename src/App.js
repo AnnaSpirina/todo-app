@@ -22,11 +22,16 @@ function App() {
     ));
   };
 
+  // Удаление задачи
+  const deleteTodo = (id) => {
+    setTodos(todos.filter(todo => todo.id !== id));
+  };
+
   return (
     <div>
       <h1>Мой Todo App</h1>
       <TodoForm />
-      <TodoList todos={todos} onToggle={toggleTodo}/>
+      <TodoList todos={todos} onToggle={toggleTodo} onDelete={deleteTodo}/>
       <TodoFilter />
       <TodoFooter />
     </div>
