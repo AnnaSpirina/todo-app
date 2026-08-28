@@ -1,6 +1,12 @@
-function TodoFilter(){
+import Button from "./UI/Button";
+
+function TodoFilter({filter, onFilterChange}){
     return (
-        <div>TodoFilter</div>
+        <div>
+            <Button onClick={() => onFilterChange("all")}>Все</Button>
+            <Button onClick={() => onFilterChange("active")}>Активные</Button>
+            <Button onClick={() => onFilterChange("completed")}>Выполненные</Button>
+        </div>
     );
 }
 

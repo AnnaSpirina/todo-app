@@ -27,6 +27,7 @@ function App() {
     setTodos(todos.filter(todo => todo.id !== id));
   };
 
+  // Добавление задачи
   const addTodo = (text) => {
     if (text.trim() === "") return;
     const newTodo = {
@@ -37,12 +38,19 @@ function App() {
     setTodos([newTodo, ...todos]);
   }
 
+  // Список задач с фильтром
+  const filteredTodos = todos.filter(todo => {
+    if (filter === 'active') return !todo.completed;
+    if (filter === 'completed') return todo.completed;
+    return true;
+  })
+
   return (
     <div>
       <h1>Мой Todo App</h1>
       <TodoForm onAdd={addTodo}/>
-      <TodoList todos={todos} onToggle={toggleTodo} onDelete={deleteTodo}/>
-      <TodoFilter />
+      <TodoList todos={filteredTodos} onToggle={toggleTodo} onDelete={deleteTodo}/>
+      <TodoFilter filter={filter} onFilterChange={setFilter}/>
       <TodoFooter />
     </div>
   );
