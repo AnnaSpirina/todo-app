@@ -3,6 +3,7 @@ import TodoFilter from "./components/TodoFilter";
 import TodoFooter from "./components/TodoFooter";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
+import TodoSidebar from "./components/TodoSidebar";
 
 function App() {
   const [todos, setTodos] = useState([
@@ -57,6 +58,7 @@ function App() {
 
   return (
     <div>
+      <TodoSidebar />
       <h1>Мой Todo App</h1>
       <TodoForm onAdd={addTodo}/>
       <TodoList todos={filteredTodos} onToggle={toggleTodo} onDelete={deleteTodo}/>
