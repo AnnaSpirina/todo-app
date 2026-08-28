@@ -43,7 +43,17 @@ function App() {
     if (filter === 'active') return !todo.completed;
     if (filter === 'completed') return todo.completed;
     return true;
-  })
+  });
+
+  // Количество активных задач
+  const activeCount = todos.filter(todo => !todo.completed).length;
+
+  // Удаляем выполненные задачи
+  const clearCompleted = () => {
+    setTodos(todos.filter(todo => !todo.completed));
+  }
+
+  const hasCompleted = todos.some(todo => todo.completed);
 
   return (
     <div>
@@ -51,7 +61,7 @@ function App() {
       <TodoForm onAdd={addTodo}/>
       <TodoList todos={filteredTodos} onToggle={toggleTodo} onDelete={deleteTodo}/>
       <TodoFilter filter={filter} onFilterChange={setFilter}/>
-      <TodoFooter />
+      <TodoFooter hasCompleted={hasCompleted} activeCount={activeCount} onClearCompleted={clearCompleted}/>
     </div>
   );
 }
