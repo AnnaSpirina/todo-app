@@ -54,11 +54,25 @@ function App() {
     setTodos(todos.filter(todo => !todo.completed));
   }
 
+  // Отмечаем все задачи как выполненные
+  const markAllComplete = () => {
+    setTodos(todos.map(todo => ({...todo, completed: true})));
+  }
+
   const hasCompleted = todos.some(todo => todo.completed);
 
   return (
     <div>
-      <TodoSidebar />
+      <TodoSidebar
+        totalCount={todos.length}
+        activeCount={activeCount}
+        completedCount={todos.length - activeCount}
+        filter={filter}
+        onFilterChange={setFilter}
+        onMarkAllComplete={markAllComplete}
+        onClearCompleted={clearCompleted}
+        hasCompleted={hasCompleted}
+      />
       <h1>Мой Todo App</h1>
       <TodoForm onAdd={addTodo}/>
       <TodoList todos={filteredTodos} onToggle={toggleTodo} onDelete={deleteTodo}/>
