@@ -27,10 +27,20 @@ function App() {
     setTodos(todos.filter(todo => todo.id !== id));
   };
 
+  const addTodo = (text) => {
+    if (text.trim() === "") return;
+    const newTodo = {
+      id: Date.now(),
+      text: text.trim(),
+      completed: false
+    }
+    setTodos([newTodo, ...todos]);
+  }
+
   return (
     <div>
       <h1>Мой Todo App</h1>
-      <TodoForm />
+      <TodoForm onAdd={addTodo}/>
       <TodoList todos={todos} onToggle={toggleTodo} onDelete={deleteTodo}/>
       <TodoFilter />
       <TodoFooter />
