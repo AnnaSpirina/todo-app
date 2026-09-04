@@ -1,3 +1,5 @@
+@import '../styles/variables.css';
+
 .todo-footer{
     display: flex;
     align-items: center;
@@ -5,7 +7,7 @@
     padding: 20px;
     background-color: #fcf8fd;
     border-radius: 10px;
-    border: 1.5px solid #f7f3fa;
+    border: 1.5px solid var(--border-color);
 }
 
 .todo-footer-tasks{
@@ -20,7 +22,7 @@
 .todo-footer-icon{
     width: 60px;
     height: 60px;
-    background: #f9e7f7;
+    background: var(--light-puple-color);
     padding: 10px;
     border-radius: 10px;
 }
@@ -30,24 +32,24 @@
     flex-direction: column;
     gap: 5px;
     font-size: 14px;
-    color: #b8b7c8;
+    color: var(--purple-gray-color);
 }
 
 .todo-footer-tasks-count{
     font-size: 18px;
-    color: #b8b7c8;
+    color: var(--purple-gray-color);
 }
 
 .todo-footer-tasks-count span{
     font-weight: 600;
     font-size: 24px;
-    color: #000000;
+    color: var(--black-color);
 }
 
 .clear-completed-button{
     background: transparent;
-    color: #F77BC8;
-    border: 2px solid #F77BC8;
+    color: var(--bright-pink-color);
+    border: 2px solid var(--bright-pink-color);
     border-radius: 10px;
     padding: 15px 30px;
     font-size: 14px;

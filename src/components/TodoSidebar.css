@@ -1,3 +1,5 @@
+@import '../styles/variables.css';
+
 .todo-sidebar{
     padding: 30px;
     display: flex;
@@ -15,7 +17,7 @@
 
 .todo-fast-actions span{
     font-size: 14px;
-    color: #b8b7c8;
+    color: var(--purple-gray-color);
     text-transform: uppercase;
 }
 

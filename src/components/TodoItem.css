@@ -1,11 +1,13 @@
+@import '../styles/variables.css';
+
 .todo-item{
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    background-color: #fefefe;
+    background-color: var(--white-background-color);
     border-radius: 10px;
-    border: 1.5px solid #f7f3fa;
+    border: 1.5px solid var(--border-color);
 }
 
 .todo-item div{
@@ -20,6 +22,6 @@
     border: none;
     cursor: pointer;
     font-size: 16px;
-    color: #F77BC8;
+    color: var(--bright-pink-color);
     font-weight: 600;
 }
