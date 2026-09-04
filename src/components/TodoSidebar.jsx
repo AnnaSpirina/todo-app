@@ -1,29 +1,29 @@
 import Button from "./UI/Button";
+import "./TodoSidebar.css"
+import TodoFilter from "./TodoFilter";
 
 function TodoSidebar({
+    filter,
     totalCount,
     activeCount,
     completedCount,
-    filter,
     onFilterChange,
     onMarkAllComplete,
     onClearCompleted,
     hasCompleted
 }) {
     return (
-        <div>
+        <div className='todo-sidebar'>
             <img src="/logo.png" alt="Мой планер" width={200}/>
-            <Button onClick={() => onFilterChange("all")}>Все ({totalCount})</Button>
-            <Button onClick={() => onFilterChange("active")}>Активные ({activeCount})</Button>
-            <Button onClick={() => onFilterChange("completed")}>Выполненные ({completedCount})</Button>
-            <div>
-                Быстрые действия:
-                <button onClick={onMarkAllComplete}>Отметить все как выполненные</button>
-                {hasCompleted && <button onClick={onClearCompleted}>Очистить выполненные</button>}
+            <TodoFilter filter={filter} totalCount={totalCount} activeCount={activeCount} completedCount={completedCount} onFilterChange={onFilterChange} className="sidebar-filter"/>
+            <div className="todo-fast-actions">
+                <span>Быстрые действия</span>
+                {completedCount < totalCount && (
+                    <Button onClick={onMarkAllComplete}><img src='/icons/check_mark.svg' width={20} height={20}/>Отметить все как выполненные</Button>
+                )}
+                {hasCompleted && <Button onClick={onClearCompleted}><img src='/icons/basket.svg' width={20} height={20}/>Очистить выполненные</Button>}
             </div>
-            <div>
-                Слоган: Порядок в задачах — порядок в голове!
-            </div>
+            <img className="todo-sidebar-image" src="/images/Мотивация.jpg" alt="Мотивация" />
         </div>
     );
 }

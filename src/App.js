@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
-import TodoFilter from "./components/TodoFilter";
-import TodoFooter from "./components/TodoFooter";
-import TodoForm from "./components/TodoForm";
-import TodoList from "./components/TodoList";
+import TodoMain from './components/TodoMain';
 import TodoSidebar from "./components/TodoSidebar";
+import "./App.css"
 
 function App() {
   const [todos, setTodos] = useState([
@@ -18,14 +16,14 @@ function App() {
 
   // Переключение статуса
   const toggleTodo = (id) => {
-    setTodos(todos.map(todo => 
+    setTodos(todos => todos.map(todo => 
       todo.id === id ? {...todo, completed: !todo.completed} : todo
     ));
   };
 
   // Удаление задачи
   const deleteTodo = (id) => {
-    setTodos(todos.filter(todo => todo.id !== id));
+    setTodos(todos => todos.filter(todo => todo.id !== id));
   };
 
   // Добавление задачи
@@ -36,7 +34,7 @@ function App() {
       text: text.trim(),
       completed: false
     }
-    setTodos([newTodo, ...todos]);
+    setTodos(todos => [newTodo, ...todos]);
   }
 
   // Список задач с фильтром
@@ -51,33 +49,42 @@ function App() {
 
   // Удаляем выполненные задачи
   const clearCompleted = () => {
-    setTodos(todos.filter(todo => !todo.completed));
+    setTodos(todos => todos.filter(todo => !todo.completed));
   }
 
   // Отмечаем все задачи как выполненные
   const markAllComplete = () => {
-    setTodos(todos.map(todo => ({...todo, completed: true})));
+    setTodos(todos => todos.map(todo => ({...todo, completed: true})));
   }
 
   const hasCompleted = todos.some(todo => todo.completed);
 
+  const totalCount = todos.length;
+
   return (
-    <div>
+    <div className='todo-container'>
       <TodoSidebar
-        totalCount={todos.length}
+        filter={filter}
+        totalCount={totalCount}
         activeCount={activeCount}
         completedCount={todos.length - activeCount}
-        filter={filter}
         onFilterChange={setFilter}
         onMarkAllComplete={markAllComplete}
         onClearCompleted={clearCompleted}
         hasCompleted={hasCompleted}
       />
-      <h1>Мой Todo App</h1>
-      <TodoForm onAdd={addTodo}/>
-      <TodoList todos={filteredTodos} onToggle={toggleTodo} onDelete={deleteTodo}/>
-      <TodoFilter filter={filter} onFilterChange={setFilter}/>
-      <TodoFooter hasCompleted={hasCompleted} activeCount={activeCount} onClearCompleted={clearCompleted}/>
+      <TodoMain
+        onAdd={addTodo}
+        todos={filteredTodos}
+        totalCount={totalCount}
+        filter={filter}
+        onToggle={toggleTodo}
+        onDelete={deleteTodo}
+        onFilterChange={setFilter}
+        hasCompleted={hasCompleted}
+        activeCount={activeCount}
+        onClearCompleted={clearCompleted}
+      />
     </div>
   );
 }

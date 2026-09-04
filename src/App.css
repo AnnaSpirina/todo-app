@@ -1,0 +1,31 @@
+.todo-container{
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  background: #fcf2f9;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.checkbox-input{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  min-width: 20px;
+  min-height: 20px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f7f3fa;
+  outline: none;
+  cursor: pointer;
+  background-color: white;
+  position: relative;
+  border-radius: 5px;
+}
+
+.checkbox-input:checked {
+  background-color: #9b6ddd;
+  border: none;
+  background-image: url('data:image/svg+xml;utf8,<svg width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.0833 0.75L3.66667 7.41667L0.75 4.38636" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 11px 9px;
+}

@@ -1,0 +1,14 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Градиент для рамки и галочки -->
+    <linearGradient id="pinkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F77BC8" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Скругленная рамка -->
+  <rect x="15" y="15" width="70" height="70" rx="18" stroke="url(#pinkGradient)" stroke-width="7" />
+
+  <!-- Галочка -->
+  <path d="M35 52 L45 62 L67 40" stroke="url(#pinkGradient)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

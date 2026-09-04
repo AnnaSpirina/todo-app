@@ -1,0 +1,25 @@
+.todo-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #fefefe;
+    border-radius: 10px;
+    border: 1.5px solid #f7f3fa;
+}
+
+.todo-item div{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 16px;
+}
+
+.todo-item .delete-button{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #F77BC8;
+    font-weight: 600;
+}

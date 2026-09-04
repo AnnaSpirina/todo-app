@@ -1,0 +1,45 @@
+.todo-filter.main-filter{
+    background-color: #fefefe;
+    border-radius: 10px;
+    border: 1.5px solid #f7f3fa;
+    padding: 10px;
+    display: flex;
+}
+
+.todo-filter.main-filter button{
+    border: none;
+    background: transparent;
+    padding: 10px 30px;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.todo-filter.main-filter button.active{
+    background-color: #f9e7f7;
+    color: #9e63d7;
+}
+
+.todo-filter.sidebar-filter{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.todo-filter.sidebar-filter button{
+    border: none;
+    background: transparent;
+    padding: 15px;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+
+.todo-filter.sidebar-filter button.active{
+    color: #ffffff;
+    background: #9e63d7;
+}

@@ -1,0 +1,57 @@
+.todo-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #fcf8fd;
+    border-radius: 10px;
+    border: 1.5px solid #f7f3fa;
+}
+
+.todo-footer-tasks{
+    width: 50%;
+    border-right: 1.5px solid #ede6f2;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 14px;
+}
+
+.todo-footer-icon{
+    width: 60px;
+    height: 60px;
+    background: #f9e7f7;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.todo-footer-tasks-text{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 14px;
+    color: #b8b7c8;
+}
+
+.todo-footer-tasks-count{
+    font-size: 18px;
+    color: #b8b7c8;
+}
+
+.todo-footer-tasks-count span{
+    font-weight: 600;
+    font-size: 24px;
+    color: #000000;
+}
+
+.clear-completed-button{
+    background: transparent;
+    color: #F77BC8;
+    border: 2px solid #F77BC8;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-size: 14px;
+    line-height: 22px;
+    cursor: pointer;
+    font-weight: 600;
+}
