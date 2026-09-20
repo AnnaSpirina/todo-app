@@ -29,3 +29,14 @@
   background-position: center;
   background-size: 11px 9px;
 }
+
+@media (max-width: 768px){
+  .todo-container{
+    display: flex;
+    flex-direction: column;
+    background: #faf5ff;
+    height: auto;
+    min-height: 100dvh;
+    overflow: auto;
+  }
+}

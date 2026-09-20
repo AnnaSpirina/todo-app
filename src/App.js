@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import TodoMain from './components/TodoMain';
 import TodoSidebar from "./components/TodoSidebar";
 import "./App.css"
+import BottomNav from './components/BottomNav';
 
 function App() {
   const [todos, setTodos] = useState([
@@ -83,6 +84,13 @@ function App() {
         onFilterChange={setFilter}
         hasCompleted={hasCompleted}
         activeCount={activeCount}
+        onClearCompleted={clearCompleted}
+      />
+      <BottomNav 
+        completedCount={todos.length - activeCount}
+        totalCount={totalCount}
+        onMarkAllComplete={markAllComplete}
+        hasCompleted={hasCompleted}
         onClearCompleted={clearCompleted}
       />
     </div>

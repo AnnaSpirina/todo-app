@@ -5,7 +5,7 @@ function TodoFooter({hasCompleted, activeCount, totalTasks, onClearCompleted}){
     return (
         <div className="todo-footer">
             <div className="todo-footer-tasks">
-                <img className="todo-footer-icon" src="/icons/check_mark.svg" alt="Check mark" />
+                <img className="todo-footer-icon" src="/icons/check_mark.svg" alt="Оставшиеся задачи" />
                 <div className="todo-footer-tasks-text">
                     Осталось задач
                     <div className="todo-footer-tasks-count"><span>{activeCount}</span> из {totalTasks}</div>

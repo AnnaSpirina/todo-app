@@ -19,9 +19,9 @@ function TodoSidebar({
             <div className="todo-fast-actions">
                 <span>Быстрые действия</span>
                 {completedCount < totalCount && (
-                    <Button onClick={onMarkAllComplete}><img src='/icons/check_mark.svg' width={20} height={20}/>Отметить все как выполненные</Button>
+                    <Button onClick={onMarkAllComplete}><img src='/icons/check_mark.svg' alt="Выполнить все" width={20} height={20}/>Отметить все как выполненные</Button>
                 )}
-                {hasCompleted && <Button onClick={onClearCompleted}><img src='/icons/basket.svg' width={20} height={20}/>Очистить выполненные</Button>}
+                {hasCompleted && <Button onClick={onClearCompleted}><img src='/icons/basket.svg' alt="Очистить все" width={20} height={20}/>Очистить выполненные</Button>}
             </div>
             <img className="todo-sidebar-image" src="/images/Мотивация.jpg" alt="Мотивация" />
         </div>

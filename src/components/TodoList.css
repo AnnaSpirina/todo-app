@@ -5,3 +5,10 @@
     height: 50dvh;
     overflow-y: auto;
 }
+
+@media (max-width: 768px){
+    .todo-list{
+        height: auto;
+        overflow-y: visible;
+    }
+}

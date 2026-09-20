@@ -57,3 +57,14 @@
     cursor: pointer;
     font-weight: 600;
 }
+
+@media (max-width: 768px){
+    .clear-completed-button{
+        display: none;
+    }
+
+    .todo-footer-tasks{
+        width: 100%;
+        border-right: none;
+    }
+}

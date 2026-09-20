@@ -45,3 +45,12 @@
     color: var(--white-color);
     background: var(--purple-color);
 }
+
+@media (max-width: 768px){
+    .todo-filter.main-filter button{
+        padding: 10px 20px;
+        font-size: 12px;
+        width: -webkit-fill-available;
+        justify-content: center;
+    }
+}
